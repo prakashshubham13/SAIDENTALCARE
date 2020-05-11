@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	
+
+<style>
+		*{
+			margin: 0;
+			padding: 0;
+
+		}
+		.container{
+			position: relative;
+			padding: 0 100px;
+			min-height: 100vh;
+			overflow: hidden;
+		}
+		.container:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 350px;
+			height: 100%;
+			background: #333;
+			z-index: -2;
+		}
+		.container:after{
+			content: 'DENTAL care';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		font-size: 13vw;
+		font-weight: 700;
+			color: #000;
+			z-index: -2;
+			opacity: 0.04;
+		}
+		.header{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 30px 0;
+		}
+		.header .logo{
+			text-transform: uppercase;
+			font-weight: 700;
+			color: #333;
+			font-size: 30px;
+			text-decoration: none;
+		}
+		.logo span{
+			
+			color:#00BFFF;
+		}
+		.header ul{
+			position: relative;
+			display: flex;
+		}
+		.header ul li{
+			list-style: none;
+			margin: 0 20px;
+		}
+		.header ul li a{
+			position: relative;
+			text-decoration: none;
+			font-size: 18px;
+			text-transform: uppercase;
+			color: #333;
+			padding: 4px 5px;
+		}
+		.header ul li:nth-child(3) a{
+			color: white;
+	
+		}
+		.header ul li:nth-child(4) a{
+			color: white;
+		}
+		.header ul li a:before{
+			content: '';
+			position: absolute;
+			top:0;
+			left:0;
+			width: 0;
+			height: 100%;
+			background-color: #00BFFF;
+			z-index: -1;
+			transition: 0.5s ease-in-out;
+		}
+		.header ul li a:hover:before{
+width: 40px;
+
+		}
+		.btn:before{
+width: 40px;
+
+		}
+		.header ul li a.active:before{
+width: 40px;
+
+		}
+		.content{
+display: flex;
+justify-content: space-between;
+align-items: center;
+		}
+		.bannerimg{
+			position: relative;
+			width:440px;
+			height: 440px;
+			
+	border-bottom: 3px solid #00BFFF;
+	border-left: 3px solid #00BFFF;
+	
+padding: 9px;
+transition: 0.5s;	}
+.bannerimg img{
+	width: 100%;
+	height: 100%;
+	
+}
+
+		.bannertext{
+			position: relative;
+			max-width: 500px;
+			margin-right: 50px;
+		
+		}
+		.content h1{
+			color: #00BFFF;
+			position: absolute;
+			transform: translate(-50px,-70px);
+		}
+		.content h1::before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-left: 1px solid black;
+			border-bottom: 1px solid black;
+			width:80%;
+			height: 100%;
+		}
+
+
+
+
+
+
+		#Paris h1{
+			color: #00BFFF;
+			position: absolute;
+			transform: translate(-50px,40px);
+		}
+		#Paris h1::before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-left: 1px solid black;
+			border-bottom: 1px solid black;
+			width:80%;
+			height: 100%;
+		}
+
+
+
+		.content h2{
+		
+			
+
+		}
+		.content p{
+	
+			
+		}
+
+
+		.caption{
+    margin-top: 10%;
+    font-size: 18px;
+}
+.caption span{
+    color: #00BFFF;
+   
+}
+
+.btnn{
+  
+  appearance: none;
+
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 2em;
+  padding:10px;
+  margin: 8px;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1;
+    border: 2px solid black;
+    font-size: 12px;
+   
+}
+
+.btnn:hover {
+    background-color:#00BFFF;
+ 
+}
+
+.content a{
+	position: relative;
+	text-decoration: none;
+	font-size: 15px;
+	color: #000;
+	line-height: 60px;
+	padding: 10px;
+}
+		.content a:before{
+			content: '';
+			position: absolute;
+			top:0;
+			left:0;
+			width: 60%;
+			height: 100%;
+			background-color: #00BFFF;
+		
+			z-index: -1;
+			transition: 0.5s ease-in-out;
+		}
+
+		.content a:before{
+			content: '';
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			height: 100%;
+			background-color: #00BFFF;
+			border-radius: 2em;
+			z-index: -1;
+			transition: 0.5s ease-in-out;
+		}
+
+		
+.element1
+{
+	opacity: 0.4;
+	position: absolute;
+	bottom: -150px;
+	right: 40%;
+	width: 250px;
+	height: 250px;
+	
+	border: 40px solid  #00BFFF;
+}
+.element2
+{
+	opacity: 0.3;
+	position: absolute;
+	left: -10px;
+	top: 40%;
+	width: 50px;
+	height: 50px;
+	border: 2px solid rgb(0, 0, 0);
+}
+
+.open
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	z-index: 10000;
+}
+.open .layer
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-origin: top;
+	animation: open 1s ease-in-out forwards;
+}
+.open .layer:nth-child(1)
+{
+	background: #ffffff;
+	z-index: 2;
+}
+.open .layer:nth-child(2)
+{
+	background: #000000;
+	animation-delay: 1s;
+	z-index: 1;
+}
+@keyframes open
+{
+	0%
+	{
+		transform: scaleY(1);
+	}
+	100%
+	{
+		transform: scaleX(0);
+	}
+}
+.social{
+	position: absolute;
+bottom: 5%;
+	display: flex;
+	
+	
+}
+.social i{
+	font-size: 30px;
+	margin: 10px;
+	color: #444443;
+	position: relative;
+	
+
+}
+.social i:hover{
+	transform: translate(0px,-5px);
+	color: #00BFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu{
+	display:none;
+}
+
+
+@media(max-width:992px)
+{
+	.container{
+		
+		padding: 20px 50px ;
+	}
+	.container:before{
+		display: none;
+	}
+	.header{
+		padding: 0;
+	}
+	.bannertext h2{
+		font-size: 20px;
+	}
+	.content{
+		margin-top: 20px;
+		flex-direction: column-reverse;
+	}
+	.bannertext h1{
+		z-index: 5;
+		color: #000;
+		transform: translate(20px,-60px);
+		background-color: white;
+	}
+	.content .bannerimg{
+		width: 100%;
+		height: 40%;
+		margin: 20px 0;
+	}
+	.bannertext{
+		max-width: 100%;
+	}
+	.social{
+		position: relative;
+		display: flex;
+	
+		bottom: 0;
+		right: 0;
+		float: right;
+		margin-top: 0px;
+		z-index: 111;
+	}
+	.myDIV{
+		display: none;
+
+
+	}
+
+.header ul{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: #fff;
+	display: block;
+	
+	display: none;
+	z-index: 10000;
+	padding: 100px 0;
+	}
+.header ul li{
+	padding: 20px;
+	text-align: center;
+
+}
+.header ul li a{
+	color: #333  !important;
+	font-size: 36px;
+}
+.header ul li a:hover:before{
+width: 100%;
+
+		}
+		.header ul li a.active:before{
+width: 100%;
+
+		}
+	
+
+
+.menu{
+	display: initial;
+	
+	position: fixed;
+	right: 50px;
+	cursor: pointer;
+	padding: 8px;
+	z-index: 11111;
+	background: transparent;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+	font-size: 40px;
+	background-position: 8px;
+	
+}
+
+
+}
+
+
+	</style>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+		<script src="https://kit.fontawesome.com/8893b709f5.js" crossorigin="anonymous"></script>
+		
+</head>
+<body>
+	
+    <script src="https://kit.fontawesome.com/8893b709f5.js" crossorigin="anonymous"></script>
+	<div class="open">
+		<div class="layer"></div>
+		<div class="layer"></div>
+	</div>
+	<div class="menu menuu" onclick="my()">
+		<i class="fas fa-bars" style="color:#00BFFF;" ></i>
+	</div>
+	<div class="container">
+		
+		<div class="header">
+			<a href="#" class="logo"><span>SAI</span> DENTAL</a>
+
+
+		
+			<ul id="myDIV">
+				
+				<li ><a href="index.html" class="active"  class="tablinks" id="defaultOpen">HOME</a></li>
+				<li><a href="services.html"  class="tablinks" >SERVICES</a></li>
+				<li><a href="gallery.html"  class="tablinks">GALLERY</a></li>
+			<li><a href="contact.html"  class="tablinks">CONTACT</a></li>
+		
+		</ul>
+			
+			
+		</div>
+		
+		<br>
+        
+
+		
+<div id="London" class="tabcontent">
+	<div class="content">
+		<div class="bannertext">
+			<div>
+			
+			
+
+
+				<div class="caption">
+					<h3>GET BEST <span>DENTAL TREATMENT</span>
+				   </h3>
+					<br>
+					<h4>TAKE ONLINE APPOINTMENTS.
+						<br>
+						GET ONLINE ASSISTANCE FROM DOCTOR WITH 14 HOURS.
+					</h4>
+				</div>
+			
+				<a href="apoint.php" class="btn" > GET APPOINTMENT</a>
+			
+
+
+
+
+
+
+				
+					
+			</div>
+		</div>
+		<div class="bannerimg">
+			<img src="1.png" alt="">
+		</div>
+	</div>
+	
+	</div>
+	
+
+
+	<div class="social">
+		<a href="https://www.facebook.com/shubham.prakash.7503" class="facebook"><i class="fab fa-facebook"></i></a>
+		<a href="https://www.instagram.com/xm_shubham/"><i class="fab fa-instagram"></i></a>
+		<a href="https://wa.me/08658034359" class="twitter"><i class="fab fa-whatsapp"></i></a>
+		<a href="https://github.com/prakashshubham13" class="twitter"><i class="fab fa-github"></i></a>
+	 </div>
+
+	<div class="element1"></div>
+	
+
+</div>
+
+
+
+
+
+<script>
+	function my() {
+		var x = document.getElementById("myDIV");
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+	  } else {
+		x.style.display = "none";
+	  }
+	}
+	</script>
+</body>
+</html>
